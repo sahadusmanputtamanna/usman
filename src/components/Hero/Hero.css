@@ -146,12 +146,36 @@
   .hero-buttons { justify-content:center; }
   .hero-desc { margin:0 auto 32px; }
   .hero-stats { grid-template-columns:repeat(2,1fr); }
-  .tb-ps  { top:0; left:0; }
-  .tb-ai  { top:0; right:0; }
-  .tb-pr  { bottom:0; left:0; }
-  .tb-ae  { bottom:0; right:0; }
+  .tb-ps  { top: 2%; left: 2%; }
+  .tb-ai  { top: 2%; right: 2%; }
+  .tb-pr  { bottom: 2%; left: 2%; }
+  .tb-ae  { bottom: 2%; right: 2%; }
+}
+@media (max-width:768px) {
+  .tool-badge {
+    padding: 6px 12px;
+    font-size: 0.65rem;
+    gap: 6px;
+  }
+  .tool-badge img {
+    width: 18px;
+    height: 18px;
+  }
 }
 @media (max-width:480px) {
   .hero-stats { grid-template-columns:repeat(2,1fr); }
   .profile-ring,.profile-img { width:240px; height:240px; }
+  .tool-badge {
+    padding: 4px 8px;
+    font-size: 0.6rem;
+    gap: 4px;
+  }
+  .tool-badge img {
+    width: 14px;
+    height: 14px;
+  }
+  .tb-ps  { top: 0%; left: 1%; }
+  .tb-ai  { top: 0%; right: 1%; }
+  .tb-pr  { bottom: 0%; left: 1%; }
+  .tb-ae  { bottom: 0%; right: 1%; }
 }

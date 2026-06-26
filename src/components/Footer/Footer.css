@@ -149,4 +149,8 @@
     flex-direction: column;
     text-align: center;
   }
+  .back-to-top {
+    bottom: 90px;
+    right: 20px;
+  }
 }

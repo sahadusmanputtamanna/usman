@@ -27,15 +27,6 @@ export const servicesData = [
     features: ['Reels & YouTube Shorts', 'Promotional Videos', 'Color Grading', 'Sound Design'],
   },
   {
-    id: 4,
-    title: 'Visual Branding',
-    description: 'Custom logos, brand guidelines, and visual assets tailored to establish a professional identity.',
-    icon: 'FaBriefcase',
-    gradient: 'linear-gradient(135deg,#003d80,#00b4ff)',
-    glow: 'rgba(0,180,255,0.2)',
-    features: ['Logo Design', 'Brand Guidelines', 'Business Cards', 'Identity Assets'],
-  },
-  {
     id: 5,
     title: 'Thumbnail Design',
     description: 'High-click-rate thumbnails for YouTube and social video platforms to boost your CTR.',

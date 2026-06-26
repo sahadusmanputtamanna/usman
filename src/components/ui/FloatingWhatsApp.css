@@ -58,8 +58,8 @@
 
 @media (max-width: 768px) {
   .floating-whatsapp-btn {
-    bottom: 16px;
-    right: 16px;
+    bottom: 20px;
+    right: 20px;
     width: 48px;
     height: 48px;
     font-size: 1.5rem;

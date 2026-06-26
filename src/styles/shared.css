@@ -124,4 +124,9 @@
   .section-padding { padding: 70px 0; }
   .container { padding: 0 18px; }
   [id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
+  .btn {
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+  }
 }

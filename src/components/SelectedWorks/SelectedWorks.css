@@ -380,10 +380,17 @@
 
 @media (max-width: 768px) {
   .sw-compact-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 8px;
     max-width: 100%;
     margin-top: 24px;
+  }
+
+  .sw-compact-card {
+    flex: 0 0 calc((100% - 16px) / 3);
+    max-width: calc((100% - 16px) / 3);
   }
 
   .sw-thumb-wrapper {
@@ -447,6 +454,23 @@
 
 /* Mobile View More Layout adjustment */
 @media (max-width: 576px) {
+  .sw-card-footer {
+    flex-direction: column;
+    gap: 6px;
+    align-items: stretch;
+  }
+
+  .sw-card-btn {
+    width: 100%;
+    text-align: center;
+    font-size: 9px;
+    padding: 3px 6px;
+  }
+
+  .sw-card-insta-link {
+    align-self: center;
+  }
+
   .sw-view-more {
     padding: 30px 20px;
     margin-top: 32px;

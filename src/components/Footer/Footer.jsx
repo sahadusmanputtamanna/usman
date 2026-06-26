@@ -68,9 +68,9 @@ export default function Footer() {
             <h4>Services</h4>
             <ul>
               <li><Link to="/services">Poster Design</Link></li>
+              <li><Link to="/services">Social Media Creatives</Link></li>
               <li><Link to="/services">Video Editing</Link></li>
-              <li><Link to="/services">Motion Graphics</Link></li>
-              <li><Link to="/services">Visual Branding</Link></li>
+              <li><Link to="/services">Thumbnail Design</Link></li>
             </ul>
           </div>
         </div>
