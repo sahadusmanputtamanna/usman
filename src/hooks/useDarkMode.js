@@ -4,7 +4,7 @@ export function useDarkMode() {
   const [dark, setDark] = useState(() => {
     const saved = localStorage.getItem('usman-theme');
     if (saved) return saved === 'dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return false; // default to light mode on first visit
   });
 
   useEffect(() => {
