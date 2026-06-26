@@ -366,6 +366,7 @@
   font-family: var(--font);
 }
 
+
 /* Responsive Breakpoints */
 
 /* Tablet Layout (2 columns) */
@@ -378,6 +379,49 @@
 }
 
 @media (max-width: 768px) {
+  .sw-compact-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    max-width: 100%;
+    margin-top: 24px;
+  }
+
+  .sw-thumb-wrapper {
+    height: 120px; /* Poster image height: 110–130px */
+  }
+
+  .sw-card-content {
+    padding: 10px;
+  }
+
+  .sw-card-category {
+    font-size: 10px; /* Category: 10px */
+    margin-bottom: 4px;
+  }
+
+  .sw-card-title {
+    font-size: 14px; /* Title: 14px */
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .sw-card-desc {
+    font-size: 11px; /* Description: 11px (2-line clamp) */
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+
+  .sw-card-btn {
+    font-size: 10px; /* Compact size */
+    padding: 4px 10px;
+  }
+
+  .sw-card-insta-link {
+    width: 24px;
+    height: 24px;
+    font-size: 0.85rem;
+  }
+
   .sw-lightbox-nav {
     width: 40px;
     height: 40px;
@@ -399,20 +443,10 @@
     height: 36px;
     font-size: 1rem;
   }
-  
-  .sw-thumb-wrapper {
-    height: 200px;
-  }
 }
 
-/* Mobile Layout (1 column) */
+/* Mobile View More Layout adjustment */
 @media (max-width: 576px) {
-  .sw-compact-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 100%;
-  }
-  
   .sw-view-more {
     padding: 30px 20px;
     margin-top: 32px;
@@ -427,8 +461,5 @@
     width: 100%;
     justify-content: center;
   }
-  
-  .sw-thumb-wrapper {
-    height: 240px; /* slightly taller on mobile to fit screen width proportion */
-  }
 }
+
