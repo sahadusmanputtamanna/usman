@@ -1,0 +1,64 @@
+.services-page {
+  background: var(--bg);
+}
+
+.workflow {
+  background: var(--bg-alt);
+}
+
+.workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.workflow-card {
+  padding: 32px 24px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.workflow-icon-wrapper {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.workflow-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.workflow-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.workflow-cta {
+  margin-top: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.workflow-cta h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+[data-theme='dark'] .workflow-card {
+  background: var(--glass-bg);
+}

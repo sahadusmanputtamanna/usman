@@ -1,0 +1,158 @@
+.pinterest-feed {
+  background: var(--bg-alt);
+}
+
+.pin-profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.pin-profile-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pin-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #e60023;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pin-profile-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.pin-profile-info p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.btn-pinterest {
+  background: #e60023;
+  color: #ffffff;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-pinterest:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+/* Masonry Columns */
+.pin-masonry {
+  column-count: 3;
+  column-gap: 20px;
+  width: 100%;
+}
+
+.pin-card {
+  break-inside: avoid;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.pin-media {
+  width: 100%;
+  position: relative;
+}
+
+.pin-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pin-card:hover .pin-overlay {
+  opacity: 1;
+}
+
+.pin-save-btn {
+  align-self: flex-end;
+  background: #e60023;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pin-overlay-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  width: 100%;
+}
+
+.pin-overlay-bottom h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.pin-link-icon {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 992px) {
+  .pin-masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 576px) {
+  .pin-masonry {
+    column-count: 1;
+  }
+  .pin-profile-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-pinterest {
+    width: 100%;
+    justify-content: center;
+  }
+}

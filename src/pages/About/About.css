@@ -1,0 +1,171 @@
+.about-page {
+  background: var(--bg);
+}
+
+.philosophy {
+  background: var(--bg-alt);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.philosophy-text-col {
+  position: relative;
+  padding-left: 20px;
+}
+
+.quote-left-deco {
+  font-size: 3rem;
+  color: var(--accent);
+  opacity: 0.12;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+}
+
+.philosophy-text-col h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.philosophy-text-col p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.philosophy-timeline h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 28px;
+  color: var(--text);
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-items::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 8px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -30px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  border: 4px solid var(--bg-alt);
+  box-shadow: 0 0 0 2px var(--border);
+}
+
+.timeline-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.timeline-content span {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.timeline-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Why Choose Me */
+.why-choose {
+  background: var(--bg);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.why-card {
+  padding: 30px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.why-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.why-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: rgba(168, 111, 3, 0.25);
+  font-family: 'Poppins', sans-serif;
+}
+
+.why-icon-box {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+.why-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+.why-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+[data-theme='dark'] .why-card {
+  background: var(--glass-bg);
+}
+
+@media (max-width: 992px) {
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

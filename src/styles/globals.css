@@ -1,0 +1,74 @@
+/* ================================================
+   USMAN PORTFOLIO – Global CSS Variables & Reset
+   ================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+:root {
+  --primary:        #593D09;
+  --primary-dark:   #3d2a05;
+  --primary-light:  #7a5510;
+  --accent:         #A86F03;
+  --accent-light:   #c8901a;
+  --text:           #1a1208;
+  --text-muted:     #6b5a3a;
+  --bg:             #ffffff;
+  --bg-alt:         #faf7f2;
+  --bg-card:        rgba(255,255,255,0.72);
+  --glass-bg:       rgba(255,255,255,0.72);
+  --border:         rgba(89,61,9,0.12);
+  --shadow-sm:      0 2px 12px rgba(89,61,9,0.07);
+  --shadow:         0 8px 40px rgba(89,61,9,0.10);
+  --shadow-md:      0 12px 32px rgba(89,61,9,0.13);
+  --shadow-lg:      0 20px 60px rgba(89,61,9,0.16);
+  --radius:         16px;
+  --radius-lg:      24px;
+  --radius-md:      12px;
+  --radius-sm:      8px;
+  --transition:     0.3s cubic-bezier(0.4,0,0.2,1);
+  --nav-h:          72px;
+  --font:           'Poppins', sans-serif;
+}
+
+[data-theme='dark'] {
+  --text:       #f5ead8;
+  --text-muted: #c8aa7a;
+  --bg:         #0e0a04;
+  --bg-alt:     #150e05;
+  --bg-card:    rgba(28,16,3,0.80);
+  --glass-bg:   rgba(28,16,3,0.80);
+  --border:     rgba(168,111,3,0.18);
+  --shadow-sm:  0 2px 12px rgba(0,0,0,0.25);
+  --shadow:     0 8px 40px rgba(0,0,0,0.40);
+  --shadow-md:  0 12px 32px rgba(0,0,0,0.45);
+  --shadow-lg:  0 20px 60px rgba(0,0,0,0.55);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* Smooth transition for every element when theme changes */
+  transition:
+    background-color 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    fill 0.35s ease;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: var(--font); }
+input, textarea, select { font-family: var(--font); }

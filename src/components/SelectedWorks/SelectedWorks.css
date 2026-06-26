@@ -1,0 +1,434 @@
+/* ================================================
+   USMAN PORTFOLIO – Selected Works Component CSS
+   ================================================ */
+
+.selected-works {
+  background: var(--bg);
+}
+
+/* 3×2 Grid Layout (Desktop – max 6 cards) */
+.sw-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: start;
+}
+
+/* Compact Card Styling */
+.sw-compact-card {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme='dark'] .sw-compact-card {
+  background: var(--glass-bg);
+}
+
+.sw-compact-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Thumbnail Wrapper & Proportional Crop */
+.sw-thumb-wrapper {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.sw-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.sw-compact-card:hover .sw-thumb-img {
+  transform: scale(1.06);
+}
+
+/* Subtle Zoom Overlay on Hover */
+.sw-thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(89, 61, 9, 0.45);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sw-compact-card:hover .sw-thumb-overlay {
+  opacity: 1;
+}
+
+.sw-thumb-zoom-icon {
+  font-size: 1.1rem;
+  color: #ffffff;
+  background: var(--accent);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transform: scale(0.85);
+  transition: transform 0.3s ease;
+}
+
+.sw-compact-card:hover .sw-thumb-zoom-icon {
+  transform: scale(1);
+}
+
+/* Equal Height Content Section */
+.sw-card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.sw-card-category {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 8px;
+  display: block;
+  font-family: var(--font);
+}
+
+.sw-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin: 0 0 16px;
+  font-family: var(--font);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+}
+
+
+/* View Button */
+.sw-card-btn {
+  align-self: flex-start;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 6px 16px;
+  transition: var(--transition);
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font);
+}
+
+.sw-compact-card:hover .sw-card-btn {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+/* Card Description */
+.sw-card-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--font);
+}
+
+/* Card Footer & Instagram Link */
+.sw-card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.sw-card-insta-link {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+}
+
+.sw-card-insta-link:hover {
+  color: #ffffff;
+  background: #E1306C;
+  border-color: #E1306C;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(225, 48, 108, 0.3);
+}
+
+
+/* View More Section (Reduced Spacing) */
+.sw-view-more {
+  text-align: center;
+  margin-top: 40px; /* Reduced excessive spacing below cards */
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme='dark'] .sw-view-more {
+  background: var(--glass-bg);
+}
+
+.sw-view-more-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 10px;
+  font-family: var(--font);
+}
+
+.sw-view-more-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto 24px;
+  line-height: 1.5;
+  font-family: var(--font);
+}
+
+.sw-view-more-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Lightbox Modal */
+.sw-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 6, 3, 0.96);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.sw-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 2010;
+  cursor: pointer;
+}
+
+.sw-lightbox-close:hover {
+  background: var(--accent);
+  transform: rotate(90deg);
+}
+
+.sw-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 2010;
+  cursor: pointer;
+}
+
+.sw-lightbox-nav:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.sw-lightbox-nav.prev {
+  left: 24px;
+}
+
+.sw-lightbox-nav.next {
+  right: 24px;
+}
+
+.sw-lightbox-card {
+  max-width: 460px;
+  width: 100%;
+  background: #140e04;
+  border: 1px solid rgba(168, 111, 3, 0.25);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  z-index: 2005;
+}
+
+.sw-lightbox-image-container {
+  position: relative;
+  max-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000000;
+}
+
+.sw-lightbox-img {
+  max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  display: block;
+}
+
+.sw-lightbox-footer {
+  padding: 20px 24px;
+  background: #1a1205;
+  border-top: 1px solid rgba(168, 111, 3, 0.15);
+}
+
+.sw-lightbox-cat {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font);
+}
+
+.sw-lightbox-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f5ead8;
+  margin: 0;
+  line-height: 1.4;
+  font-family: var(--font);
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet Layout (2 columns) */
+@media (max-width: 1024px) {
+  .sw-compact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sw-lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .sw-lightbox-nav.prev {
+    left: 10px;
+  }
+  
+  .sw-lightbox-nav.next {
+    right: 10px;
+  }
+  
+  .sw-lightbox-close {
+    top: 15px;
+    right: 15px;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .sw-thumb-wrapper {
+    height: 200px;
+  }
+}
+
+/* Mobile Layout (1 column) */
+@media (max-width: 576px) {
+  .sw-compact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 100%;
+  }
+  
+  .sw-view-more {
+    padding: 30px 20px;
+    margin-top: 32px;
+  }
+  
+  .sw-view-more-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .sw-view-more-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .sw-thumb-wrapper {
+    height: 240px; /* slightly taller on mobile to fit screen width proportion */
+  }
+}

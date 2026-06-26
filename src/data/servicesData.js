@@ -1,0 +1,48 @@
+export const servicesData = [
+  {
+    id: 1,
+    title: 'Poster Design',
+    description: 'Professional event, business and social media posters that captivate your audience.',
+    icon: 'FaImage',
+    gradient: 'linear-gradient(135deg,#593D09,#A86F03)',
+    glow: 'rgba(168,111,3,0.2)',
+    features: ['Event Posters', 'Business Banners', 'Flyer Design', 'Print-Ready Files'],
+  },
+  {
+    id: 2,
+    title: 'Social Media Creatives',
+    description: 'Instagram posts, stories and promotions designed to maximise reach and brand recognition.',
+    icon: 'FaInstagram',
+    gradient: 'linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)',
+    glow: 'rgba(131,58,180,0.2)',
+    features: ['Instagram Posts', 'Stories & Reels Covers', 'Promotion Graphics', 'Brand Templates'],
+  },
+  {
+    id: 3,
+    title: 'Video Editing',
+    description: 'Reels, Shorts and promotional videos edited professionally for maximum impact.',
+    icon: 'FaFilm',
+    gradient: 'linear-gradient(135deg,#1a0050,#9999ff)',
+    glow: 'rgba(100,100,255,0.2)',
+    features: ['Reels & YouTube Shorts', 'Promotional Videos', 'Color Grading', 'Sound Design'],
+  },
+  {
+    id: 4,
+    title: 'Visual Branding',
+    description: 'Custom logos, brand guidelines, and visual assets tailored to establish a professional identity.',
+    icon: 'FaBriefcase',
+    gradient: 'linear-gradient(135deg,#003d80,#00b4ff)',
+    glow: 'rgba(0,180,255,0.2)',
+    features: ['Logo Design', 'Brand Guidelines', 'Business Cards', 'Identity Assets'],
+  },
+  {
+    id: 5,
+    title: 'Thumbnail Design',
+    description: 'High-click-rate thumbnails for YouTube and social video platforms to boost your CTR.',
+    icon: 'FaMagic',
+    gradient: 'linear-gradient(135deg,#593D09,#c8901a)',
+    glow: 'rgba(200,144,26,0.2)',
+    features: ['YouTube Thumbnails', 'High CTR Layouts', 'Custom Typography', 'Photo Manipulation'],
+  },
+];
+

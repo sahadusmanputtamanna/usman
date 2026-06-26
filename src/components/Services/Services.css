@@ -1,0 +1,123 @@
+.services {
+  background: var(--bg);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.service-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--accent);
+}
+
+.service-card-header {
+  padding: 30px 24px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
+.service-icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+}
+
+.service-card-header h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.service-card-body {
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: var(--bg);
+}
+
+.service-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.service-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.feat-check-icon {
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.service-card-action {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Custom outline button with dynamic hover state */
+.btn-outline-alt {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-alt:hover {
+  background: var(--hover-bg);
+  border-color: transparent;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='dark'] .service-card-body {
+  background: var(--glass-bg);
+}
