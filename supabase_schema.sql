@@ -78,3 +78,32 @@ with check (bucket_id = 'portfolio-images' and auth.role() = 'authenticated');
 create policy "Admin delete access on portfolio-images"
 on storage.objects for delete
 using (bucket_id = 'portfolio-images' and auth.role() = 'authenticated');
+
+-- 4. Create visitor_stats table for visitor analytics
+create table if not exists visitor_stats (
+  id uuid default gen_random_uuid() primary key,
+  ip_hash text,
+  created_at timestamptz default now()
+);
+
+-- Enable Row-Level Security for visitor_stats
+alter table visitor_stats enable row level security;
+
+-- Drop policies if they already exist
+drop policy if exists "Allow public insert visitor_stats" on visitor_stats;
+drop policy if exists "Allow public select visitor_stats" on visitor_stats;
+drop policy if exists "Allow auth admin delete visitor_stats" on visitor_stats;
+
+-- Create policies for visitor_stats
+create policy "Allow public insert visitor_stats"
+on visitor_stats for insert
+with check (true);
+
+create policy "Allow public select visitor_stats"
+on visitor_stats for select
+using (true);
+
+create policy "Allow auth admin delete visitor_stats"
+on visitor_stats for delete
+using (auth.role() = 'authenticated');
+

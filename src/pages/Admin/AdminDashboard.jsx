@@ -20,6 +20,7 @@ const categories = [
 export default function AdminDashboard() {
   const [works, setWorks] = useState([]);
   const [messagesCount, setMessagesCount] = useState(0);
+  const [visitorCount, setVisitorCount] = useState(0);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
 
@@ -37,10 +38,15 @@ export default function AdminDashboard() {
   // UI state
   const [alert, setAlert] = useState({ type: '', message: '' });
   const [previewWork, setPreviewWork] = useState(null);
+  const [lastUpdated, setLastUpdated] = useState('');
+  const [todayDate, setTodayDate] = useState('');
   const fileInputRef = useRef(null);
 
   useEffect(() => {
     fetchDashboardData();
+    const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    setTodayDate(new Date().toLocaleDateString(undefined, dateOptions));
+    setLastUpdated(new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' }));
   }, []);
 
   const fetchDashboardData = async () => {
@@ -63,6 +69,24 @@ export default function AdminDashboard() {
       if (countError) throw countError;
       setMessagesCount(count || 0);
 
+      // 3. Fetch visitor count (gracefully fallback if table does not exist yet)
+      try {
+        const { count: countVisitors, error: visitorError } = await supabase
+          .from('visitor_stats')
+          .select('*', { count: 'exact', head: true });
+
+        if (visitorError) {
+          console.warn('[AdminDashboard] visitor_stats query failed (likely table needs database migration):', visitorError.message);
+          setVisitorCount(0);
+        } else {
+          setVisitorCount(countVisitors || 0);
+        }
+      } catch (errVisitor) {
+        console.warn('[AdminDashboard] Exception checking visitor stats:', errVisitor);
+        setVisitorCount(0);
+      }
+
+      setLastUpdated(new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', second: '2-digit' }));
     } catch (err) {
       console.error(err);
       showAlert('error', 'Failed to retrieve dashboard records.');
@@ -240,36 +264,45 @@ export default function AdminDashboard() {
         )}
       </AnimatePresence>
 
-      {/* Overview Cards */}
+      {/* Top Overview Control Card */}
+      <div className="admin-overview-card glass">
+        <div className="overview-meta">
+          <h2>Overview Dashboard</h2>
+          <p className="overview-timestamp">
+            Today's Date: {todayDate} | Last Updated: {lastUpdated}
+          </p>
+        </div>
+        <a
+          href="https://usman-nu.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary visit-btn"
+        >
+          🌐 Visit Portfolio
+        </a>
+      </div>
+
+      {/* Overview Stats Cards Grid */}
       <div className="admin-stats-grid">
         <div className="stat-card glass">
           <div className="stat-card-icon"><FaImages /></div>
           <div className="stat-card-info">
             <h3>{totalWorks}</h3>
-            <p>Total Works ({publishedWorks} Published)</p>
+            <p>Total Portfolio Works ({publishedWorks} Published)</p>
           </div>
         </div>
         <div className="stat-card glass">
           <div className="stat-card-icon"><FaEnvelope /></div>
           <div className="stat-card-info">
             <h3>{messagesCount}</h3>
-            <p>Total Messages</p>
+            <p>Total Contact Messages</p>
           </div>
         </div>
         <div className="stat-card glass">
-          <div className="stat-card-icon"><FaFolder /></div>
+          <div className="stat-card-icon"><FaEye /></div>
           <div className="stat-card-info">
-            <h3>{categoriesCount}</h3>
-            <p>Active Categories</p>
-          </div>
-        </div>
-        <div className="stat-card glass">
-          <div className="stat-card-icon"><FaCloudUploadAlt /></div>
-          <div className="stat-card-info">
-            <h4 style={{ margin: '0 0 4px', fontSize: '0.9rem', color: 'var(--text)' }}>
-              {works[0] ? works[0].title : 'No uploads'}
-            </h4>
-            <p>Latest Upload</p>
+            <h3>{visitorCount}</h3>
+            <p>Total Portfolio Visitors (Users)</p>
           </div>
         </div>
       </div>
